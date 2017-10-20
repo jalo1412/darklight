@@ -1,0 +1,59 @@
+// Place all the styles related to the Teacherv controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.present {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: #ffffff;
+  padding: 10px 20px;
+  border: solid #486824 2px;
+  text-decoration: none;
+}
+
+.present:hover {
+  background: #486824;
+}
+
+.absent {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: #ffffff;
+  padding: 10px 20px;
+  border: solid #D13525 2px;
+  text-decoration: none;
+}
+
+.absent:hover {
+  background: #D13525;
+}
+
+.late {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: #ffffff;
+  padding: 10px 20px;
+  border: solid #F2C057 2px;
+  text-decoration: none;
+}
+
+.late:hover {
+  background: #F2C057;
+}
+
+.excused {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: #ffffff;
+  padding: 10px 20px;
+  border: solid #4C3F54 2px;
+  text-decoration: none;
+}
+
+.excused:hover {
+  background: 	#4C3F54;
+}

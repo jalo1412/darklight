@@ -1,0 +1,2 @@
+class StatusOfAttendance < ApplicationRecord
+end

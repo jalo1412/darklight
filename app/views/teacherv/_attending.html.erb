@@ -1,0 +1,30 @@
+<p>Hello from partialOP</p>
+<%set_teacher%>
+<%set_lecture_course%>
+<%set_lecture_course_entryn(params[:id].to_i)%>
+<%set_student_attendance_list%>
+<%=  greeting %>
+<%=  x.to_s %>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @studentsList != nil %>
+    <% @studentsList.each do |s| %>
+    <tr>
+      <td><%= s.name %></td>
+      <td><%= s.last_name %></td>
+      <td><%= button_to "Present", attendances_path(Status_of_attendance_id: 1, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :class=>"present", remote: true%></td>
+      <td><%= button_to "Absent", attendances_path(Status_of_attendance_id: 2, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :class=>"absent", remote: true%></td>
+      <td><%= button_to "Late", attendances_path(Status_of_attendance_id: 3, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :class=>"late", remote: true%></td>
+      <td><%= button_to "Excused", attendances_path(Status_of_attendance_id: 4, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :class=>"excused", remote: true%></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>

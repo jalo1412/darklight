@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-10-09
+  title: MyString
+  content: MyString
+  Type_of_evaluation: one
+  Lecture_course: one
+
+two:
+  date: 2017-10-09
+  title: MyString
+  content: MyString
+  Type_of_evaluation: two
+  Lecture_course: two

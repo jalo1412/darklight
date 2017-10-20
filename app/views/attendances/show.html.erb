@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status of attendance:</strong>
+  <%= @attendance.Status_of_attendance %>
+</p>
+
+<p>
+  <strong>Lecture course entry:</strong>
+  <%= @attendance.Lecture_course_entry %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @attendance.Student %>
+</p>
+
+<%= link_to 'Edit', edit_attendance_path(@attendance) %> |
+<%= link_to 'Back', attendances_path %>

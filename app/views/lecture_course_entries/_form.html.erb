@@ -1,0 +1,42 @@
+<%= form_with(model: lecture_course_entry, local: true) do |form| %>
+  <% if lecture_course_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lecture_course_entry.errors.count, "error") %> prohibited this lecture_course_entry from being saved:</h2>
+
+      <ul>
+      <% lecture_course_entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number, :value => (@numberoflectures.to_i) + 1, id: :lecture_course_entry_number  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, :default => Date.today, id: :lecture_course_entry_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.time_select :time, :default => Time.now, id: :lecture_course_entry_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :lecture_course_entry_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Lecture_course_id %>
+    <%= form.text_field :Lecture_course_id, :value => @lecture_course.id, id: :lecture_course_entry_Lecture_course_id%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,52 @@
+<%= form_with(model: student, local: true) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :student_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :student_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :matricule_number %>
+    <%= form.text_field :matricule_number, id: :student_matricule_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :blood_type %>
+    <%= form.text_field :blood_type, id: :student_blood_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :allergy %>
+    <%= form.text_field :allergy, id: :student_allergy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Parent_id %>
+    <%= form.text_field :Parent_id, id: :student_Parent_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Course_id %>
+    <%= form.text_field :Course_id, id: :student_Course_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

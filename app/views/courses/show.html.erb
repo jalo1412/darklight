@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+<h2>General Information</h2>
+<p>
+  <strong>Level:</strong>
+  <%= @course.level %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @course.section %>
+</p>
+
+<p>
+  <strong>Graduation year:</strong>
+  <%= @course.graduation_year %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @course.Teacher.name + " " + @course.Teacher.last_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
+
+<h2>Students</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last name</th>
+      <th>Matricule number</th>
+      <th>Blood type</th>
+      <th>Allergy</th>
+      <th>Parent</th>
+      <th>Course</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.last_name %></td>
+        <td><%= student.matricule_number %></td>
+        <td><%= student.blood_type %></td>
+        <td><%= student.allergy %></td>
+        <td><%= student.Parent.name %></td>
+        <td><%= student.Course.level + student.Course.section%></td>
+        <td><%= link_to 'Show', student %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

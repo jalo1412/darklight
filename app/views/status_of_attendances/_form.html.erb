@@ -1,0 +1,22 @@
+<%= form_with(model: status_of_attendance, local: true) do |form| %>
+  <% if status_of_attendance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(status_of_attendance.errors.count, "error") %> prohibited this status_of_attendance from being saved:</h2>
+
+      <ul>
+      <% status_of_attendance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :status_of_attendance_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <nav>
+      This is the developement Bar, it should display as long as the webseit ins under construction. This is not an oficial navbar, its being held only for practical reasons
+    </br>
+    <%= link_to "home", home_index_path %>
+    <%= link_to "user", users_path %>
+    <%= link_to "type of users", type_of_users_path %>
+    <%= link_to "parents", parents_path %>
+    <%= link_to "students", students_path %>
+    <%= link_to "notes", notes_path %>
+    <%= link_to "courses", courses_path %>
+    <%= link_to "teachers", teachers_path %>
+    <%= link_to "lecture", lectures_path %>
+    <%= link_to "lecture courses", lecture_courses_path %>
+    <%= link_to "lecture course entry", lecture_course_entries_path %>
+    <%= link_to "types of evaluation", type_of_evaluations_path %>
+    <%= link_to "evaluations", evaluations_path %>
+    <%= link_to "grades", grades_path %>
+    <%= link_to "attendance", attendances_path %>
+  </nav>
+  <nav>
+    <div class="vertical-menu">
+      <% if session[:user_id] %>
+      <%= link_to "Home", home_index_path %>
+      <% end %>
+      <% if session[:type_of_user] == "Administrator" %>
+      <%= link_to 'Users'  %>
+      <%= link_to 'Students'  %>
+      <%= link_to 'Parents' %>
+      <% end %>
+      <% if session[:type_of_user] == "Parent" %>
+      <%= link_to 'My Sohns and Daughets', son_path%>
+      <%= link_to 'Messages from Teacher'  %>
+      <%= link_to 'Administrate account', edit_user_path(session[:user_id]) %>
+      <% end %>
+      <% if session[:type_of_user] == "Teacher" %>
+      <%= link_to 'Evaluate', new_grade_path  %>
+      <%= link_to 'My Course', teacherv_path%>
+      <%= link_to 'My Lectures'  %>
+      <%= link_to 'My Lectures per Course', teacherv_teaching_path  %>
+      <%= link_to 'My Entres of Lectures per Course', teacherv_my_lectures_course_entries_path  %>
+      <%= link_to 'Notes that i have written'  %>
+      <%= link_to 'Grades that i have evaluated'  %>
+      <%= link_to 'Administrate account', edit_user_path(session[:user_id]) %>
+      <% end %>
+    </div>
+
+  </nav>
+</br>
+
+<title>Darklight</title>
+<%= csrf_meta_tags %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body class="bodyandhorizontalmenu">
+<nav>
+  <div class="horizontal-menu">
+    <% if session[:type_of_user] == "Teacher" %>
+    <%= link_to 'Lecture Entry', teacherv_teaching_path%>
+    <%= link_to 'Attendance', teacherv_attending_path(:id => 0)%>
+    <%= link_to 'Anotate Student', new_note_path%>
+    <% end %>
+    <log id="log">
+      <% if !session[:user_id] %>
+      <%= link_to 'Login', login_path%>
+      <% end %>
+      <% if session[:user_id] %>
+      <%= link_to 'Logout', logout_path, method: :delete %>
+      <% end %>
+    </log>
+  </div>
+</nav>
+</br>
+<div class="main">
+<%= yield %>
+</div>
+</body>
+</html>

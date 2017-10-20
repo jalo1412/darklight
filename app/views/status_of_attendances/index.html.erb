@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Status Of Attendances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @status_of_attendances.each do |status_of_attendance| %>
+      <tr>
+        <td><%= status_of_attendance.status %></td>
+        <td><%= link_to 'Show', status_of_attendance %></td>
+        <td><%= link_to 'Edit', edit_status_of_attendance_path(status_of_attendance) %></td>
+        <td><%= link_to 'Destroy', status_of_attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Status Of Attendance', new_status_of_attendance_path %>

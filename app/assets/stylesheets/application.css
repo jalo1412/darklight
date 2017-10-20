@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.horizontal-menu {
+  float: right;
+  margin: 6px;
+  padding: 12px;
+}
+
+.horizontal-menu a {
+  color: black;
+  display: inline;
+  padding: 12px;
+  text-decoration: none;
+}
+
+#log a {
+  background-color: #f44336;
+  color: black;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12;
+  padding-bottom: 12;
+  display: inline;
+}
+
+#log a:hover {
+  background-color: #A52A2A;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12;
+  padding-bottom: 12;
+}
+
+.horizontal-menu a:hover {
+  background-color: #ccc;
+}
+
+.horizontal-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.vertical-menu {
+  float: left;
+  width: 200px;
+  height: 100vh;
+  background-color: #eeee;
+  margin: 12px;
+}
+
+.vertical-menu a {
+  background-color: #eeee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.bodyandhorizontalmenu {
+  width: 1240px;
+}

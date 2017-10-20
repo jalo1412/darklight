@@ -1,0 +1,22 @@
+<%= form_with(model: type_of_user, local: true) do |form| %>
+  <% if type_of_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(type_of_user.errors.count, "error") %> prohibited this type_of_user from being saved:</h2>
+
+      <ul>
+      <% type_of_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :type_of_user %>
+    <%= form.text_field :type_of_user, id: :type_of_user_type_of_user %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,78 @@
+<h1>my Sons and Daughters</h1>
+<p>Son#index ->Find me in app/views/son/index.html.erb</p>
+<h2>Students</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last name</th>
+      <th>Course</th>
+      <!--<th>Matricule number</th>-->
+      <th>Blood type</th>
+      <th>Allergy</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% @sons.each do |s| %>
+  <tr>
+    <tbody>
+        <td><%= s.name %></td>
+        <td><%= s.last_name %></td>
+        <td><%= s.Course.level + s.Course.section%></td>
+        <!--<td><%= s.matricule_number %></td>-->
+        <td><%= s.blood_type %></td>
+        <td><%= s.allergy %></td>
+        <td> <%=link_to 'go to Studens resume ', s %></td>
+  </tr>
+    </tbody>
+  <% end %>
+</table>
+
+<h2>Class Notes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Description</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% @snotes.each do |n| %>
+  <tr>
+    <tbody>
+        <td><%= n.Student.name %></td>
+        <td><%= n.date %></td>
+        <td><%= n.description%></td>
+  </tr>
+    </tbody>
+  <% end %>
+</table>
+
+<h2>Grades</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Lecture</th>
+      <th>Type of evaluation</th>
+      <th>Grade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% @sgrades.each do |g| %>
+  <tr>
+    <tbody>
+        <td><%= g.Student.name %></td>
+        <td><%= g.Evaluation.date%></td>
+        <td><%= g.Evaluation.Lecture_course.Lecture.name%></td>
+        <td><%= g.Evaluation.Type_of_evaluation.name%></td>
+        <td><%= g.grade%></td>
+  </tr>
+    </tbody>
+  <% end %>
+</table>

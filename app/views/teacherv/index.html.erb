@@ -1,0 +1,32 @@
+<h1>Teacherv#index</h1>
+<p>Wellcome Mr/Mrs.
+  <%=@profe[0].name%>
+  <%=@profe[0].last_name%></p>
+<h3>My Course</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Section</th>
+      <th>Generation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cursos.each do |course| %>
+    <tr>
+      <td><%= course.level %></td>
+      <td><%= course.section %></td>
+      <td><%= course.graduation_year %></td>
+      <td><%= link_to 'Show', course %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= render "lecture", lectures: @lectures %>
+
+<br>

@@ -1,0 +1,10 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<h1>Teacherv#attending</h1>
+<p>Find me in app/views/teacherv/attending.html.erb</p>
+<body>
+  <%=@studentsList.each%>
+
+  <div id="pro">
+  <%= render :partial=>'teacherv/attending', :locals => {:greeting => 'Hello world', :x => params[:id], :id => params[:id]} %> 
+</div>
+</body>

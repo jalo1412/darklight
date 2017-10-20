@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  last_name: MyString
+  matricule_number: MyString
+  blood_type: MyString
+  allergy: MyString
+  Parent: one
+  Course: one
+
+two:
+  name: MyString
+  last_name: MyString
+  matricule_number: MyString
+  blood_type: MyString
+  allergy: MyString
+  Parent: two
+  Course: two

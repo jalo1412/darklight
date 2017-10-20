@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Status_of_attendance: one
+  Lecture_course_entry: one
+  Student: one
+
+two:
+  Status_of_attendance: two
+  Lecture_course_entry: two
+  Student: two

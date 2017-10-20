@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  date: 2017-10-14
+  time: 2017-10-14 13:03:03
+  description: MyText
+  Lecture_course: one
+
+two:
+  number: 1
+  date: 2017-10-14
+  time: 2017-10-14 13:03:03
+  description: MyText
+  Lecture_course: two

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @lecture_course_entry.number %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @lecture_course_entry.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @lecture_course_entry.time %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @lecture_course_entry.description %>
+</p>
+
+<p>
+  <strong>Lecture course:</strong>
+  <%= @lecture_course_entry.Lecture_course %>
+</p>
+
+<%= link_to 'Edit', edit_lecture_course_entry_path(@lecture_course_entry) %> |
+<%= link_to 'Back', lecture_course_entries_path %>
