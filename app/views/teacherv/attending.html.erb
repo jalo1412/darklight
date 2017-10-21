@@ -2,9 +2,7 @@
 <h1>Teacherv#attending</h1>
 <p>Find me in app/views/teacherv/attending.html.erb</p>
 <body>
-  <%=@studentsList.each%>
-
   <div id="pro">
-  <%= render :partial=>'teacherv/attending', :locals => {:greeting => 'Hello world', :x => params[:id], :id => params[:id]} %> 
+  <%= render :partial=>'teacherv/attending', :locals => {:lectureCouEntId => @lecture_course_entry.id} %>
 </div>
 </body>

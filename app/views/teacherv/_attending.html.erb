@@ -1,10 +1,9 @@
-<p>Hello from partialOP</p>
+<p>Hello from partial _attending</p>
 <%set_teacher%>
 <%set_lecture_course%>
-<%set_lecture_course_entryn(params[:id].to_i)%>
+<%set_lecture_course_entryn(lectureCouEntId)%>
 <%set_student_attendance_list%>
-<%=  greeting %>
-<%=  x.to_s %>
+<h3> Attendance for  <%=@lecture_course_entry.Lecture_course.Course.level +  @lecture_course_entry.Lecture_course.Course.section + " " + @lecture_course_entry.Lecture_course.Lecture.name%></h3>
 <table>
   <thead>
     <tr>
@@ -19,10 +18,10 @@
     <tr>
       <td><%= s.name %></td>
       <td><%= s.last_name %></td>
-      <td><%= button_to "Present", attendances_path(Status_of_attendance_id: 1, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :class=>"present", remote: true%></td>
-      <td><%= button_to "Absent", attendances_path(Status_of_attendance_id: 2, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :class=>"absent", remote: true%></td>
-      <td><%= button_to "Late", attendances_path(Status_of_attendance_id: 3, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :class=>"late", remote: true%></td>
-      <td><%= button_to "Excused", attendances_path(Status_of_attendance_id: 4, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :class=>"excused", remote: true%></td>
+      <td><%= button_to "Present", attendances_path(Status_of_attendance_id: 1, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :locals => {:lectureCouEntId => lectureCouEntId }, :class =>"present", remote: true%></td>
+      <td><%= button_to "Absent", attendances_path(Status_of_attendance_id: 2, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :locals => {:lectureCouEntId => lectureCouEntId }, :class=>"absent", remote: true%></td>
+      <td><%= button_to "Late", attendances_path(Status_of_attendance_id: 3, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :locals => {:lectureCouEntId => lectureCouEntId }, :class=>"late", remote: true%></td>
+      <td><%= button_to "Excused", attendances_path(Status_of_attendance_id: 4, Lecture_course_entry_id: @lecture_course_entry.id, Student_id: s.id), :locals => {:lectureCouEntId => lectureCouEntId }, :class=>"excused", remote: true%></td>
     </tr>
     <% end %>
     <% end %>

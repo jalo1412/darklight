@@ -1,6 +1,10 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: %i[show edit update destroy]
 
+
+
+
+
   # GET /attendances
   # GET /attendances.json
   def index
@@ -25,11 +29,11 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.new(Status_of_attendance_id: params[:Status_of_attendance_id],
                                  Lecture_course_entry_id: params[:Lecture_course_entry_id],
                                  Student_id: params[:Student_id])
-    TeachervController
+    
     respond_to do |format|
       if @attendance.save
         format.html { redirect_to teacherv_attending_path }
-        format.js 
+        format.js
         format.json { render :show, status: :created, location: @attendance }
       else
         format.html { render :new }

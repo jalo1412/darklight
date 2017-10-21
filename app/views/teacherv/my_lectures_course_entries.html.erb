@@ -21,7 +21,7 @@
       <td><%= le.description %></td>
       <td><%= le.id %></td>
       <td><%= link_to 'Edit', edit_lecture_course_entry_path(le.id) %></td>
-      <td><%= link_to 'Attendance', teacherv_attending_path(:id => le.id)  %></td>
+      <td><%= link_to 'Attendance', teacherv_attending_path(:lectureCouEntId => le.id)  %></td>
     </tr>
     <% end %>
   </tbody>

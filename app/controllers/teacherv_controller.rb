@@ -18,7 +18,7 @@ class TeachervController < ApplicationController
     set_curso
     set_lecture
     set_lecture_course
-    set_lecture_course_entryn(params[:id].to_i)
+    set_lecture_course_entryn(params[:lectureCouEntId].to_i)
     set_student_attendance_list
   end
   def my_lectures_course_entries
